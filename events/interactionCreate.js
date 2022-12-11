@@ -98,42 +98,42 @@ client.on("interactionCreate", async (interaction) => {
     if(interaction.customId == `p1`)
     {
       punit = client.commands.filter(x => x.category && x.category == "security").map(r => `\`${r.name}\``);
-      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(message.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Antinuke \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
+      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(interaction.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Antinuke \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
     }
     if(interaction.customId == `p2`)
     {
       punit = client.commands.filter(x => x.category && x.category == `mod`).map(r => `\`${r.name}\``);
-      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(message.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Moderation \`[${punit.length}]\`**` ,value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
+      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(interaction.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Moderation \`[${punit.length}]\`**` ,value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
     }
     if(interaction.customId == `p3`)
     {
       punit = client.commands.filter(x => x.category && x.category == `info`).map(r => `\`${r.name}\``);
-      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(message.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Utility \`[${punit.length}]\`**` ,value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
+      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(interaction.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Utility \`[${punit.length}]\`**` ,value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
     }
     if(interaction.customId == `p4`)
     {
       punit = client.commands.filter(x => x.category && x.category == `giveaway`).map(r => `\`${r.name}\``);
-      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(message.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Giveaway \`[${punit.length}]\`**` ,value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
+      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(interaction.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Giveaway \`[${punit.length}]\`**` ,value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
     }
     if(interaction.customId == `p5`)
     {
       punit = client.commands.filter(x => x.category && x.category == `fun`).map(r => `\`${r.name}\``);
-      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(message.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Fun \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
+      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(interaction.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Fun \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
     }
     if(interaction.customId == `p6`)
     {
-      punit = client.commands.filter(x => x.category && x.category == `image`).map(r => `\`${r.name}\``);
-      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(message.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Image \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
+      punit = client.commands.filter(x => x.category && x.category == `Image`).map(r => `\`${r.name}\``);
+      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(interaction.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Image \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
     }
     if(interaction.customId == `p7`)
     {
       punit = client.commands.filter(x => x.category && x.category == `owner`).map(r => `\`${r.name}\``);
-      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(message.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Custom Role \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
+      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(interaction.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Custom Role \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])] , components : [r1,r2,row]})
     }
     if(interaction.customId == `p8`)
     {
       punit = client.commands.filter(x => x.category && x.category == `welcomer`).map(r => `\`${r.name}\``);
-      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(message.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Welcomer \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])],components : [r1,r2,row]})
+      return interaction.update({embeds : [new MessageEmbed().setColor(`#2f3136`).setThumbnail(interaction.guild.iconURL({dynamic : true})).setAuthor({name : `${client.user.username} HelpDesk` , iconURL : client.user.displayAvatarURL()}).addFields([{name : `**Welcomer \`[${punit.length}]\`**` , value : punit.sort().join(", ")}])],components : [r1,r2,row]})
     }
   }
 });

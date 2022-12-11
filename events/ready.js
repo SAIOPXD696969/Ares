@@ -4,7 +4,7 @@ const client = require('../index'),
   chalk = require('chalk');
 
 function logAscii(bot, mode) {
-  const x = `\n{!} :: Logged in as ${bot}\n{!} :: Made by SAI_xD 69#8377\n\n`
+  const x = `\n{!} :: Logged in as ${bot}\n{!} :: Made by TEAM ARES\n\n`
   console.log(`${x}`)
 }
 module.exports = async (client) => {

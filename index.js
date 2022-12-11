@@ -10,6 +10,7 @@ const { readdirSync } = require("fs");
 const util = require('./handler/util.js');
 const GiveawayManager = require("./handler/GiveawayManager");
 const config = require("./config");
+const data = require("./config");
 
 
 
@@ -48,5 +49,5 @@ client.emoji = {
 
 
 
-client.login(config.token);
+client.login(data.token);
 module.exports = client;

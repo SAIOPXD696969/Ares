@@ -20,7 +20,7 @@ module.exports = {
     },
     credits: {
       developerId: '954815434828431451',
-      developer: 'SAI_xD 69#8377',
+      developer: 'TEAM ARES',
     }
   }
 }

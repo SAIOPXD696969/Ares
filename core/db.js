@@ -1,5 +1,6 @@
 const { Database } = require('quickmongo');
-const db = new Database('mongodb+srv://Test_Bot:8851020767@test.idqc2xz.mongodb.net/?retryWrites=true&w=majority');
+const data = require('../config');
+const db = new Database(data.mongo);
 db.connect().then(() => console.log('[ MONGO DB ] Connected to Mongo Database!'));
 
 module.exports = db;

@@ -1,48 +1,38 @@
-const { message, client, MessageEmbed,MessageActionRow,MessageButton } = require("discord.js");
+const { MessageEmbed } = require(`discord.js`);
+const Settings = require('../../core/settings.js');
 
 module.exports = {
-  name: "official",
-  aliases: ['off', 'offi'],
-  category: 'owner',
-  run: async (client, message, args) => {
+    name : "official",
+    aliases : ["off"],
+    category : "owner",
+    run : async(client,message,args) => {
+        let prefix = await client.db.get(`prefix_${message.guild.id}`);
+        if(!prefix) prefix = Settings.bot.info.prefix;
+        let reqRole = await client.db.get(`reqrole_${message.guild.id}`);
+        if(!reqRole || reqRole == null){
+            return message.channel.send({embeds : [new MessageEmbed().setColor("DARK_BUT_NOT_BLACK").setDescription(`There is no **Required Role** for **Custom Roles**`)]})
+        }
 
+        if(!message.member.permissions.has("ADMINISTRATOR") && message.author.id != message.guild.ownerId  && !message.member.roles.cache.has(reqRole)){ return message.channel.send({embeds : [new MessageEmbed().setColor("DARK_BUT_NOT_BLACK").setDescription(`You are not allowed to run these command.`)]}) }
 
+        if(!args[0]){
+            return message.channel.send({embeds : [new MessageEmbed().setColor(`DARK_BUT_NOT_BLACK`).setDescription(`Usage : \`${prefix}\`official <user>\``)]})
+        }
 
-    if(!message.member.permissions.has("ADMINISTRATOR") === false){
-        const embed = new MessageEmbed()
-        .setDescription("You are not allowed to use these command !")
-        .setColor("DARK_BUT_NOT_BLACK")
-        return message.channel.send({embeds: [embed]})
+        let abc = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+        if(!abc) return message.channel.send({content : `Please Provide me a valid user.`});
+
+        let gRole = await client.db.get(`official_${message.guild.id}`);
+        if(!gRole || gRole == null){
+            return message.channel.send({embeds : [new MessageEmbed().setColor(`DARK_BUT_NOT_BLACK`).setDescription(`There is no **official Role** set for **Custom Roles**`)]})
+        }
+
+        if(!message.guild.roles.cache.has(gRole)){
+            await client.db.set(`official_${message.guild.id}`,null);
+            return message.channel.send({embeds : [new MessageEmbed().setColor(`DARK_BUT_NOT_BLACK`).setDescription(`I couldn't find that role in this guild.Probably deleted!`)]})
+        }
+
+        message.guild.members.cache.get(abc.id).roles.add(gRole);
+        return message.channel.send({embeds : [new MessageEmbed().setColor(`DARK_BUT_NOT_BLACK`).setDescription(`SuccessFully Added <@&${gRole}> to ${abc}`)]});
     }
-const abc = message.mentions.members.first() || message.guild.members.cache.get(args[0])
-if(!abc){
-    return message.channel.send(`Provide The User`)
 }
-   
-
-    if(abc){
-        const friend = await client.db.get(`official_${message.guild.id}`)  || "no"
-        if(friend === "no"){
-            const embed = new MessageEmbed()
-            .setDescription(`You don't have any Official Role Yet.`)
-            .setColor('DARK_BUT_NOT_BLACK')
-            return message.channel.send({embeds:[embed]});
-        }
-        
-        const check = abc.roles.cache.has(friend)
-        if(check){
-abc.roles.remove(friend);
-const embed = new MessageEmbed()
-.setDescription(`Successfully Removed Official Role`)
-.setColor('DARK_BUT_NOT_BLACK')
- message.channel.send({embeds:[embed]});
-        } else {
-            abc.roles.add(friend); 
-            const embed = new MessageEmbed()
-            .setDescription(`Added Official Role`)
-            .setColor('DARK_BUT_NOT_BLACK')
-             message.channel.send({embeds:[embed]});
-        }
-    }
-    
-  }}

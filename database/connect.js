@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const chalk = require('chalk');
+const data = require('../config');
 
 async function connect() {
-    mongoose.connect("mongodb+srv://Test_Bot:8851020767@test.idqc2xz.mongodb.net/?retryWrites=true&w=majority", {
+    mongoose.connect(data.mongo, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });

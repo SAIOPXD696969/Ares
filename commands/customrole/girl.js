@@ -1,12 +1,13 @@
 const { MessageEmbed } = require(`discord.js`);
+const Settings = require('../../core/settings.js');
 
 module.exports = {
     name : "girl",
-    aliases : ["gir"],
+    aliases : ["fri"],
     category : "owner",
     run : async(client,message,args) => {
         let prefix = await client.db.get(`prefix_${message.guild.id}`);
-        if(!prefix) prefix = "&";
+        if(!prefix) prefix = Settings.bot.info.prefix;
         let reqRole = await client.db.get(`reqrole_${message.guild.id}`);
         if(!reqRole || reqRole == null){
             return message.channel.send({embeds : [new MessageEmbed().setColor("DARK_BUT_NOT_BLACK").setDescription(`There is no **Required Role** for **Custom Roles**`)]})
@@ -21,9 +22,9 @@ module.exports = {
         let abc = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         if(!abc) return message.channel.send({content : `Please Provide me a valid user.`});
 
-        let gRole = await client.data.get(`girl_${message.guild.id}`);
+        let gRole = await client.db.get(`girl_${message.guild.id}`);
         if(!gRole || gRole == null){
-            return message.channel.send({embeds : [new MessageEmbed().setColor(`DARK_BUT_NOT_BLACK`).setDescription(`There is no **Girl Role** set for **Custom Roles**`)]})
+            return message.channel.send({embeds : [new MessageEmbed().setColor(`DARK_BUT_NOT_BLACK`).setDescription(`There is no **girl Role** set for **Custom Roles**`)]})
         }
 
         if(!message.guild.roles.cache.has(gRole)){
@@ -31,7 +32,7 @@ module.exports = {
             return message.channel.send({embeds : [new MessageEmbed().setColor(`DARK_BUT_NOT_BLACK`).setDescription(`I couldn't find that role in this guild.Probably deleted!`)]})
         }
 
-        message.guild.members.cache.get(abc).roles.add(gRole);
-        return message.channel.send({embeds : [new MessageEmbed().setColor(`DARK_BUT_NOT_BLACK`).setDescription(`SuccessFully Added ${gRole} to ${abc}`)]});
+        message.guild.members.cache.get(abc.id).roles.add(gRole);
+        return message.channel.send({embeds : [new MessageEmbed().setColor(`DARK_BUT_NOT_BLACK`).setDescription(`SuccessFully Added <@&${gRole}> to ${abc}`)]});
     }
 }
