@@ -4,11 +4,14 @@
     "aki-api": "^6.0.8",
     "axios": "^0.27.2",
     "canvacord": "^5.4.8",
+    "node-fetch": "^2.6.1",
+
     "canvas": "^2.10.2",
     "chalk": "^4.0.0",
     "child_process": "^1.0.2",
     "discord-giveaways": "^5.2.2",
     "discord.js": "^13.11.0",
+    "discordinfo.js": "^1.0.0",
     "dotenv": "^16.0.3",
     "edit-json-file": "^1.7.0",
     "enmap": "^5.9.2",
@@ -23,7 +26,7 @@
     "mongoose": "^6.6.3",
     "ms": "^2.1.3",
     "node-os-utils": "^1.3.7",
-    "node-superfetch": "^0.3.3",
+    "node-superfetch": "^0.2.3",
     "phin": "^3.6.1",
     "pm2": "^5.2.0",
     "quick.db": "^9.0.6",
@@ -33,23 +36,23 @@
     "util": "^0.12.4",
     "wait": "^0.4.2"
   },
-  "name": "antinuke-bot",
+  "name": "ares",
   "description": "Use this tool to protect your discord servers against nukes.",
   "version": "1.0.0",
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd src && node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/loda/antinuke.git"
+    "url": "git+https://github.com/AAYAN717628/Ares/"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/loda/antinuke/issues"
+    "url": "https://github.com/AAYAN717628/Ares/issues"
   },
-  "homepage": "https://github.com/loda/antinuke#readme"
+  "homepage": "https://github.com/AAYAN717628/Ares/#readme"
 }

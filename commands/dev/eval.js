@@ -3,7 +3,7 @@ const saixd = ['701643179212013568', '954815434828431451','336007991574659074']
 module.exports = {
   name: "eval",
   aliases: ['ev', 'jaduexe'],
-  category: 'owner',
+  category: 'dev',
   run: async (client, message, args) => {
         
       if(!saixd.includes(message.author.id)) return

@@ -70,6 +70,12 @@ module.exports = {
               description: 'Get All Welcomer Command List',
               value: 'sixth',
              
+            },
+            {
+              label: 'Custom Role',
+              description: 'Get All Custom Role Command List',
+              value: 'seven',
+             
             }
           ])
         )

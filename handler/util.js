@@ -199,6 +199,15 @@ module.exports = class Util {
             }).catch((_) => { })
             return
           }
+          if (funny === 'seven') {
+            _commands = this.client.commands.filter((x) => x.category && x.category === "owner").map((x) => `\`${x.name}\``);
+            embed.addField(`**Custom Role \`[${_commands.length}]\`**`, _commands.sort().join(", "))
+            interaction.update({
+              embeds: [embed],
+              ephemeral: true
+            }).catch((_) => { })
+            return
+          }
       } catch (err) {
           return;
       }

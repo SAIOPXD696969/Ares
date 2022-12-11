@@ -37,6 +37,18 @@ client.on('messageCreate', async (message) => {
   const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
   if(!command) return;
   message.guild.prefix = prefix;
+
+
+
+// Blacklist system
+const dbs = await client.db.get(`blacklist_${message.author.id}`) || "nhi"
+
+if(dbs === true){
+  const embed = new MessageEmbed()
+  .setDescription(`You have been blacklisted form using bot !`)
+  .setColor("DARK_BUT_NOT_BLACK")
+  return message.channel.send({embeds: [embed]})
+} 
   await command.run(client, message, args);
 });
 }

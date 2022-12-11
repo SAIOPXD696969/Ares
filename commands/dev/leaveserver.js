@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const saixd = ['701643179212013568', '972076172684967947','954815434828431451','336007991574659074', '970384245635837994'];
 module.exports = {
   name: `leaveserver`,
-  category: `owner`,
+  category: `dev`,
   aliases: [`leaveg`, `gleave`],
   description: `Leaves A Guild`,
   run: async (client, message, args) => {
