@@ -1,22 +1,59 @@
-### antinuke
-Use this tool to protect your discord servers against nukes.
+
+<div align="center">
+  <img src="https://cdn.discordapp.com/avatars/997160874206826587/85fa9f8b7b7f0fe2e3c7320086719fc3.webp?size=80" />
+</div>
+# ARES
+
+A all in one security bot over 70+ commands with latest tech , These is a official  repo of Ares bot !
 
 
-### description
-This tool protects your servers from 16 type of events and it has recovery feature like Flantic. the difference is, you need to pay for recovery feature in flantic and this bot is always free ❤️. This tool is tested on nukers like Lithium & PlayZ nuker, so no chance to bypass it 🔥
 
-### Setup
-#### Replit
-- click [this](https://github.com/Sxlitude/antinuke/tree/main) for replit version.
-#### Heroku
-- create an account on heroku
-- click [this link](https://dashboard.heroku.com/new?template=https://github.com/Sxlitude/antinuke/tree/heroku) & fill options
-- once deployed, click `manage`
-- from the top-right menu click `open app`
-- copy the url of the redirected page (it must end with `...herokuapp.com`)
-- use that url in [uptimerobot](https://uptimerobot.com/) (interval can be > 30 mins)
-- done! you can click on `view logs` on the top-right, to see what's happening!
 
-### Have issues?
-if you find a bug in the antinuke or want to ask something about the bot, you can report it by opening an issue ;)
-and hey u can contact me on discord too, i'm **Sxlitude#8885**
+## Features
+
+- Anti Nuke
+- Moderation
+- Welcome
+- Games
+- Voice Role
+- Fun
+- Custom Roles
+- Developer Commands
+- No Prefix & Blacklist System
+- Multi Guild
+- Giveaways
+- Whitelist System 
+- Much More
+
+
+## Screenshots
+
+![App Screenshot](https://media.discordapp.net/attachments/1051053563838746624/1051060097406746674/image.png?width=523&height=427)
+
+
+## Installation
+
+Use node v16+
+
+```bash
+  npm install
+  node index.js
+```
+
+- Provide information on core/settings
+- In config.js provide token or you can use env 
+## ENV FORMAT FOR token
+token = YOUR TOKEN
+    
+## Support
+ https://discord.gg/Z4tKgfgj9Y
+ 
+
+
+## Information
+
+These is an official ares github page , These is the latest ares script .
+Ares has total 1k+ servers you are free to change anything 
+
+
+## These is not created by AAYAN & PUNIT , These is uploaded on behalf of ARES TEAM
